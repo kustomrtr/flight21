@@ -1,8 +1,8 @@
 $(document).ready(function () {
+    tooltips();
     matchHeights();
     smoothScroll();
     goUp();
-    tooltips();
     calendarActiveClick();
 });
 
@@ -37,7 +37,7 @@ function smoothScroll() {
 
 function goUp() {
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 75) {
+        if ($(this).scrollTop() > 750) {
             $('.go-up').fadeIn();
         } else {
             $('.go-up').fadeOut();
@@ -47,12 +47,12 @@ function goUp() {
 
 function tooltips() {
     $('[data-toggle="tooltip"]').tooltip({
-        trigger: 'hover click'
+        trigger: 'click'
     });
 }
 
 function calendarActiveClick(){
-    $(".calendar-dayblock-default").on('click', function () {
+    $(".calendar-dayblock-withinfo").on('click', function () {
         $(this).toggleClass("calendar-dayblock-active");
     });
 }

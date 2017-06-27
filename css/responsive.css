@@ -28,6 +28,14 @@
          bottom: 20px;
          right: 20px;
      }
+     .logo {
+         background: url(../img/logo.png) no-repeat;
+         width: 175px;
+         left: 50%;
+         background-size: cover;
+         height: 66px;
+         transform: translateX(-50%);
+     }
  }
  /* Extra Small Devices, Phones */
  
@@ -38,23 +46,98 @@
      .section-about {
          flex-wrap: wrap;
      }
+     .about-img img {
+         height: 200px;
+     }
      .about-img {
          margin-bottom: 30px;
+         margin-right: 0;
      }
      .box {
          padding: 20px 40px;
      }
-     .logo {
-         background: url(../img/logo.png) no-repeat;
-         width: 175px;
-         left: 50%;
-         background-size: cover;
-         height: 66px;
-         transform: translateX(-50%);
-     }
      .calendar-desktop {
+         /*         display: none;*/
+     }
+     .footer-copyright {
+         text-align: center;
+     }
+     .calendar-dayblock {
+         width: calc(15% - 13px);
+         height: 58px;
+         font-size: 20px;
+         text-align: center;
+         padding: 15px 0;
+         border: 1px solid #eee;
+     }
+     .calendar-day-info {
          display: none;
      }
+     .tooltip.top {
+         margin-top: 5px;
+         margin-left: 128px;
+     }
+     .calendar-dayblock:hover {
+         background: #FAFAFA;
+     }
+     .calendar-dayblock-flight {
+         color: #fb6202;
+         background: #fafafa;
+     }
+     .calendar-dayblock-flight:hover {
+         color: #fb6202;
+         background: #f4f4f4;
+     }
+     .calendar-dayblock-alt,
+     .calendar-dayblock-alt:hover {
+         background: #f4f4f4;
+         cursor: default;
+     }
+     .calendar-day,
+     .calendar-day:hover {
+         height: auto;
+         background: transparent;
+         text-align: center;
+         color: #fe6a01;
+         font-weight: bold;
+         font-size: 14px;
+     }
+     .calendar-day-info {
+         /*    color: #646464;*/
+         font-size: 16px;
+         font-weight: 300;
+         text-transform: uppercase;
+     }
+     .calendar-dayblock-active:hover p{
+         color: white !important;
+     }
+     .calendar-dayblock-default:hover p {
+         color: #4f4f4f;
+     }
+     .calendar-dayblock-flight:hover,
+     .calendar-day-info-flight {
+         color: #fb6202;
+     }
+     .calendar-dayblock-active {
+         color: #ffffff !important;
+         background: #fb6202 !important;
+     }
+     ,
+     
+     /*
+     .calendar-dayblock:hover {
+         background: #FAFAFA;
+         color: #4f4f4f;
+     }
+     .calendar-dayblock-default:hover p {
+         color: #4f4f4f;
+     }
+     .calendar-dayblock-default:hover .calendar-dayblock-active {
+         color: #ffffff !important;
+         background: #fb6202 !important;
+     }
+     
+*/
  }
  /* Custom, iPhone Retina */
  

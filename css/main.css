@@ -133,7 +133,7 @@ CALENDAR
     font-weight: bold;
     font-family: "Roboto", sans-serif;
     color: #4f4f4f;
-    cursor: pointer;
+    cursor: default;
     position: relative;
 }
 
@@ -186,6 +186,10 @@ CALENDAR
 .calendar-dayblock-active {
     color: #ffffff;
     background: #fb6202;
+}
+
+.calendar-dayblock-withinfo {
+    cursor: pointer;
 }
 
 
@@ -315,7 +319,7 @@ OTHERS
     display: block;
     position: relative;
     top: 60px;
-    left: 50px;
+    left: 90px;
 }
 
 .container-sm {
