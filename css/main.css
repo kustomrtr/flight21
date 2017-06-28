@@ -25,6 +25,11 @@ h2 {
     text-align: justify !important;
 }
 
+span.reverse {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
 
 /*----------------------------------------*\
 
@@ -248,6 +253,14 @@ FORMS
     margin-bottom: 30px;
 }
 
+.intl-tel-input {
+    width: 100%;
+}
+
+.error {
+    border-color: red;
+    color: red;
+}
 
 /*----------------------------------------*\
 

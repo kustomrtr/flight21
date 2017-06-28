@@ -4,6 +4,7 @@ $(document).ready(function () {
     smoothScroll();
     goUp();
     calendarActiveClick();
+    phoneValidator();
 });
 
 function matchHeights() {
@@ -51,8 +52,54 @@ function tooltips() {
     });
 }
 
-function calendarActiveClick(){
+function calendarActiveClick() {
     $(".calendar-dayblock-withinfo").on('click', function () {
         $(this).toggleClass("calendar-dayblock-active");
     });
+}
+
+function phoneValidator() {
+    var telInput = $("#phone");
+
+    telInput.intlTelInput({
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.15/js/utils.js",
+        autoPlaceholder: true,
+        preferredCountries: ['fr', 'us', 'gb']
+    });
+
+    var reset = function () {
+        telInput.removeClass("error");
+    };
+
+    // on blur: validate
+    telInput.blur(function () {
+        reset();
+        if ($.trim(telInput.val())) {
+            if (telInput.intlTelInput("isValidNumber")) {
+//                alert("valid");
+            } else {
+                telInput.addClass("error");
+//                alert("invalid");
+            }
+        }
+    });
+    
+    $("form").on('submit', function(e){
+        var isvalidate=$("form").valid();
+        if(telInput.intlTelInput("isValidNumber") && isvalidate) {
+//            e.preventDefault();
+        } else {
+            e.preventDefault();
+        }
+    });
+}
+
+function getvalues(f)
+{
+    var form=$("#"+f);
+    var str='';
+    $("input:not('input:submit')", form).each(function(i){
+        str+='\n'+$(this).prop('name')+': '+$(this).val();
+    });
+    return str;
 }
